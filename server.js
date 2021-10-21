@@ -17,6 +17,7 @@ const httpStatus = require('http-status');
 const mazdaRouterV1 = require('./routes/v1/mazda');
 const bmwRouterV1 = require('./routes/v1/bmw');
 const porscheRouterV1 = require('./routes/v1/porsche');
+const toyotaRouterV1 = require('./routes/v1/toyota');
 
 const app = express();
 
@@ -43,6 +44,7 @@ if (!process.env.JWT_PRIVATE_KEY) {
 app.use('/v1/mazda', mazdaRouterV1);
 app.use('/v1/bmw', bmwRouterV1);
 app.use('/v1/porsche', porscheRouterV1);
+app.use('/v1/toyota', toyotaRouterV1);
 
 // error handler
 process.on('uncaughtException', (ex) => {
